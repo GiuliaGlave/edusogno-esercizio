@@ -12,12 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600&display=swap"
         rel="stylesheet">
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="./assets/styles/login.css">
+    <link rel="stylesheet" href="./assets/styles/register.css">
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Edusogno</title>
 </head>
@@ -28,10 +24,6 @@
 
         <!-- <form action="login.php" method="post"> -->
 
-        <?php if (isset($_GET['error'])) { ?>
-        <p class="error"><?php echo $_GET['error']; ?></p>
-        <?php } ?>
-
         <header>
             <div class="logo">
                 <img src="./assets/img/Group 181.svg" alt="logo">
@@ -39,25 +31,26 @@
         </header>
 
         <main>
-            <h1 class="title">Hai già un account?</h1>
+            <h1 class="title">Crea il tuo account</h1>
 
             <div class="form-container">
                 <div class="form-content">
+                    <label>Inserisci il nome</label>
+                    <input type="email" name="email" placeholder="Mario"><br>
+
+                    <label>Inserisci il cognome</label>
+                    <input type="email" name="email" placeholder="Rossi"><br>
+
                     <label>Inserisci l'e-mail</label>
                     <input type="email" name="email" placeholder="name@example.com"><br>
 
-
                     <label>Inserisci la password</label>
-                    <input class="password" type="password" name="password" placeholder="Scrivila qui">
+                    <input type="password" name="password" placeholder="Scrivila qui"><br>
                     <span> <i class="fa-solid fa-eye"></i>
                     </span>
+                    <button type="submit">REGISTRATI</button>
 
-
-                    <br>
-
-                    <button type="submit">ACCEDI</button>
-
-                    <p class="change-page">Non hai ancora un profilo? <span><a href="#"> Registrati</a></span></p>
+                    <p class="change-page">Hai già un account? <span><a href="#">Accedi</a></span></p>
                 </div>
 
             </div>
@@ -81,6 +74,7 @@
         <img class="circle-small" src="./assets/img/svg-circle.svg" alt="">
         <img class="rocket" src="./assets/img/svg-rocket.svg" alt="">
 
+    </div>
     </div>
 </body>
 
