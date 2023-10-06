@@ -12,9 +12,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600&display=swap"
         rel="stylesheet">
-
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="stylesheet" href="./assets/styles/home.css">
+
     <title>Home</title>
 </head>
 
@@ -31,32 +31,53 @@
         <main>
             <h1 class="title">Ciao ### ecco i tuoi eventi</h1>
             <div class="event-container">
-                <h1>Nome evento</h1>
-                <p>data inserimento evento</p>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text">
+                            <h1 class="event-title">Nome evento</h1>
+                            <p class="event-date">data inserimento evento</p>
+                        </div>
 
-                <button type="submit">JOIN</button>
-
-            </div>
-
-            <div class="event-container">
-                <h1>Nome evento</h1>
-                <p>data inserimento evento</p>
-
-                <button type="submit">JOIN</button>
-
-            </div>
-            <div class="event-container">
-                <h1>Nome evento</h1>
-                <p>data inserimento evento</p>
-
-                <button type="submit">JOIN</button>
-
+                        <button type="submit">JOIN</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text">
+                            <h1 class="event-title">Nome evento</h1>
+                            <p class="event-date">data inserimento evento</p>
+                        </div>
+                        <button type="submit">JOIN</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text">
+                            <h1 class="event-title">Nome evento</h1>
+                            <p class="event-date">data inserimento evento</p>
+                        </div>
+                        <button type="submit">JOIN</button>
+                    </div>
+                </div>
             </div>
 
         </main>
 
+    </div>
 
-        <!--  </form> -->
+    <!-- BACKGROUND -->
+
+    <div class="background">
+        <!-- waves -->
+        <img class="wave wave1" src="./assets/img/svg1.svg" alt="">
+        <img class="wave wave2" src="./assets/img/svg2.svg" alt="">
+        <img class="wave wave3" src="./assets/img/svg3.svg" alt="">
+
+        <!-- graphic -->
+        <img class="circle-big" src="./assets/img/svg-circle.svg" alt="">
+        <img class="circle-small" src="./assets/img/svg-circle.svg" alt="">
+        <img class="rocket" src="./assets/img/svg-rocket.svg" alt="">
+
     </div>
 
 </body>

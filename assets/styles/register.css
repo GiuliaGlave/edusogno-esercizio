@@ -10,6 +10,7 @@
   border: 1px solid #134077;
   background: #fff;
   z-index: 99;
+  margin-top: 22px;
 }
 
 .form-content {
@@ -20,4 +21,7 @@
   justify-content: space-between;
   padding: 46px 36px 52px;
   width: 579px;
+}
+
+.password-container {
 }

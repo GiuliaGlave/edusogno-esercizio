@@ -46,14 +46,12 @@
                     <label>Inserisci l'e-mail</label>
                     <input type="email" name="email" placeholder="name@example.com"><br>
 
+                    <div class="password-container">
+                        <label>Inserisci la password</label>
+                        <input class="password" type="password" name="password" placeholder="Scrivila qui">
+                        <i class="fa-solid fa-eye"></i>
 
-                    <label>Inserisci la password</label>
-                    <input class="password" type="password" name="password" placeholder="Scrivila qui">
-                    <span> <i class="fa-solid fa-eye"></i>
-                    </span>
-
-
-                    <br>
+                    </div>
 
                     <button type="submit">ACCEDI</button>
 
