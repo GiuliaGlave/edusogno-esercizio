@@ -210,3 +210,10 @@ button {
   margin-bottom: 0;
   font-size: large;
 }
+.success {
+  width: 100%;
+  color: green;
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 28px;
+}

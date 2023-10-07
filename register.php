@@ -1,3 +1,47 @@
+<?php
+    // Connessione al database
+    $db_servername = "localhost";
+    $db_username = "root";
+    $db_password = "";
+    $db_name = 'edusogno_esercizio';
+
+    $conn = new mysqli($db_servername, $db_username, $db_password, $db_name);
+
+    // Verifica la connessione
+    if ($conn->connect_error) {
+        die("Connessione fallita: " . $conn->connect_error);
+    }
+
+// Variabili per i messaggi
+$messaggio_registrazione = "";
+$errore_email = "";
+
+    // Verifica se il modulo è stato inviato
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST["nome"];
+    $cognome = $_POST["cognome"];
+    $email = $_POST["email"];
+    $password = $_POST["password"]; 
+
+    // Query per verificare l'unicità dell'indirizzo email
+    $check_email_query = "SELECT email FROM utenti WHERE email='$email'";
+    $result = $conn->query($check_email_query);
+
+    if ($result->num_rows > 0) {
+        $errore_email = "L'indirizzo email è già presente nel database";
+    } else {
+        // L'indirizzo email è unico, quindi inserisci l'utente nel database
+        $sql = "INSERT INTO utenti (nome, cognome, email, password) VALUES ('$nome', '$cognome', '$email', '$password')";
+
+        if ($conn->query($sql) === TRUE) {
+            $messaggio_registrazione = "Nuovo utente creato con successo!";
+        } else {
+            $errore = "Errore nell'inserimento dell'utente: " . $conn->error;
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,46 +71,49 @@
     <div class="container">
 
 
-        <!-- <form action="login.php" method="post"> -->
+        <form action="register.php" method="post">
 
-        <header>
-            <div class="logo">
-                <img src="./assets/img/Group 181.svg" alt="logo">
-            </div>
-        </header>
+            <header>
+                <div class="logo">
+                    <img src="./assets/img/Group 181.svg" alt="logo">
+                </div>
+            </header>
 
-        <main>
-            <h1 class="title">Crea il tuo account</h1>
+            <main>
+                <h1 class="title">Crea il tuo account</h1>
 
-            <div class="form-container">
-                <div class="form-content">
-                    <label>Inserisci il nome</label>
-                    <input type="email" name="email" placeholder="Mario"><br>
+                <div class="form-container">
+                    <div class="form-content">
+                        <label>Inserisci il nome</label>
+                        <input type="text" name="nome" placeholder="Mario" required><br>
 
-                    <label>Inserisci il cognome</label>
-                    <input type="email" name="email" placeholder="Rossi"><br>
+                        <label>Inserisci il cognome</label>
+                        <input type="text" name="cognome" placeholder="Rossi" required><br>
 
-                    <label>Inserisci l'e-mail</label>
-                    <input type="email" name="email" placeholder="name@example.com"><br>
+                        <label>Inserisci l'e-mail</label>
+                        <input type="email" name="email" placeholder="name@example.com" required><br>
 
-                    <div class="password-container">
-                        <label>Inserisci la password</label>
-                        <input class="password" type="password" name="password" placeholder="Scrivila qui">
-                        <i class="fa-solid fa-eye"></i>
+                        <div class="password-container">
+                            <label>Inserisci la password</label>
+                            <input class="password" type="password" name="password" placeholder="Scrivila qui" required>
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
 
+                        <button type="submit">REGISTRATI</button>
+
+                        <!-- Validator -->
+                        <p class="success"><?php echo $messaggio_registrazione; ?></p>
+                        <p class="error"><?php echo $errore_email; ?></p>
+
+                        <p class="change-page">Hai già un account? <span><a href="index.php">Accedi</a></span></p>
                     </div>
 
-                    <button type="submit">REGISTRATI</button>
-
-                    <p class="change-page">Hai già un account? <span><a href="index.php">Accedi</a></span></p>
                 </div>
 
-            </div>
-
-        </main>
+            </main>
 
 
-        <!--  </form> -->
+        </form>
     </div>
 
     <!-- BACKGROUND -->
