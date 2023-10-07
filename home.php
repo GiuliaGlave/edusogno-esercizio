@@ -1,10 +1,24 @@
 <?php
-// Includi il file db.php per la connessione al database
+// Includi i file
 require_once("./assets/db/db.php");
+require_once("./controller/eventController.php");
 
 // Avvia la sessione
 session_start();
 
+//prova controller
+$eventController = new EventController();
+$eventController->add("Evento nuovo prova", "23/11/2022","Marco, Filippo", "Questo è un nuovo evento");
+$eventi = $eventController->view();
+
+/* $eventi = $eventController->view();
+foreach ($eventi as $index => $evento) {
+    echo "Nome Evento: " . $evento->nome_evento . "<br>";
+    echo "Data: " . $evento->data_evento . "<br>";
+    echo "Attendees: " . $evento->attendees . "<br>";
+    echo "Descrizione: " . $evento->descrizione . "<br><br>";
+} */
+?>
 ?>
 
 <!DOCTYPE html>
