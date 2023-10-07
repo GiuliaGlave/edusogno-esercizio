@@ -5,13 +5,8 @@ require_once("./assets/db/db.php");
 // Avvia la sessione
 session_start();
 
-// Verifica se l'utente è autenticato
-if (!isset($_SESSION['logged_in'])) {
-    // Se l'utente non è autenticato, reindirizza alla pagina di accesso
-    header("Location: login.php");
-    exit(); // Termina lo script 
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +38,8 @@ if (!isset($_SESSION['logged_in'])) {
         </header>
 
         <main>
-            <h1 class="title">Ciao ### ecco i tuoi eventi</h1>
+            <h1 class="title">Ciao <?php echo $_SESSION['nome'] . ' ' . $_SESSION['cognome']; ?>, ecco i tuoi eventi
+            </h1>
             <div class="event-container">
                 <div class="card">
                     <div class="card-content">

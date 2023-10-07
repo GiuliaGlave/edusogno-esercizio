@@ -23,7 +23,13 @@ if (isset($_POST['login-btn'])) {
     //se si verifica una corrispondenza (riga di dati)
     if ($result->num_rows == 1) {
         // le credenziali sono valide, l'utente è loggato
+        $row = $result->fetch_assoc();
         $_SESSION['logged_in'] = true;
+
+        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['nome'] = $row['nome'];
+        $_SESSION['cognome'] = $row['cognome'];
+        
         // Reindirizza l'utente alla sua home.php
         header("Location: home.php");
         // dopo il reindirizzamento termina lo script
