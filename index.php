@@ -21,6 +21,8 @@
 
     <link rel="stylesheet" href="./assets/styles/login.css">
     <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/mediaqueries.css">
+
     <title>Edusogno</title>
 </head>
 

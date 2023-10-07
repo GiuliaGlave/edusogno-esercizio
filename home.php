@@ -37,6 +37,7 @@ foreach ($eventi as $index => $evento) {
         rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="stylesheet" href="./assets/styles/home.css">
+    <link rel="stylesheet" href="./assets/styles/mediaqueries.css">
 
     <title>Home</title>
 </head>
@@ -71,7 +72,7 @@ foreach ($eventi as $index => $evento) {
                             <h1 class="event-title">Nome evento</h1>
                             <p class="event-date">data inserimento evento</p>
                         </div>
-                        <button type="submit">JOIN</button>
+                        <button type="submit" class="btn-home">JOIN</button>
                     </div>
                 </div>
                 <div class="card">
