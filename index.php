@@ -1,3 +1,5 @@
+<?php require_once('login.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,12 +28,7 @@
     <div class="container">
 
 
-        <form action="login.php" method="post">
-
-            <!-- messaggio di errore -->
-            <?php if (isset($_GET['error'])) { ?>
-            <p class="error"><?php echo $_GET['error']; ?></p>
-            <?php } ?>
+        <form action="index.php" method="post">
 
             <header>
                 <div class="logo">
@@ -54,18 +51,26 @@
 
                         </div>
 
-                        <button type="submit">ACCEDI</button>
+                        <button type="submit" name="login-btn">ACCEDI</button>
+
+                        <!-- messaggio di errore -->
+                        <?php if ($attemptedLogin && isset($_SESSION['error_message'])) { ?>
+                        <p class="error"><?php echo $_SESSION['error_message']; ?></p>
+                        <?php unset($_SESSION['error_message']); // Elimina il messaggio di errore dalla sessione ?>
+                        <?php } ?>
 
                         <p class="change-page">Non hai ancora un profilo? <span><a href="register.php">
                                     Registrati</a></span></p>
                     </div>
 
                 </div>
-
             </main>
 
 
+
         </form>
+
+
     </div>
 
     <!-- BACKGROUND -->

@@ -1,3 +1,17 @@
+<?php
+// Includi il file db.php per la connessione al database
+require_once("./assets/db/db.php");
+
+// Avvia la sessione
+session_start();
+
+// Verifica se l'utente è autenticato
+if (!isset($_SESSION['logged_in'])) {
+    // Se l'utente non è autenticato, reindirizza alla pagina di accesso
+    header("Location: login.php");
+    exit(); // Termina lo script 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
