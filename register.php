@@ -58,7 +58,7 @@
 
                     <button type="submit">REGISTRATI</button>
 
-                    <p class="change-page">Hai già un account? <span><a href="#">Accedi</a></span></p>
+                    <p class="change-page">Hai già un account? <span><a href="index.php">Accedi</a></span></p>
                 </div>
 
             </div>

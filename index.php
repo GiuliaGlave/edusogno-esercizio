@@ -26,44 +26,46 @@
     <div class="container">
 
 
-        <!-- <form action="login.php" method="post"> -->
+        <form action="login.php" method="post">
 
-        <?php if (isset($_GET['error'])) { ?>
-        <p class="error"><?php echo $_GET['error']; ?></p>
-        <?php } ?>
+            <!-- messaggio di errore -->
+            <?php if (isset($_GET['error'])) { ?>
+            <p class="error"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
 
-        <header>
-            <div class="logo">
-                <img src="./assets/img/Group 181.svg" alt="logo">
-            </div>
-        </header>
+            <header>
+                <div class="logo">
+                    <img src="./assets/img/Group 181.svg" alt="logo">
+                </div>
+            </header>
 
-        <main>
-            <h1 class="title">Hai già un account?</h1>
+            <main>
+                <h1 class="title">Hai già un account?</h1>
 
-            <div class="form-container">
-                <div class="form-content">
-                    <label>Inserisci l'e-mail</label>
-                    <input type="email" name="email" placeholder="name@example.com"><br>
+                <div class="form-container">
+                    <div class="form-content">
+                        <label>Inserisci l'e-mail</label>
+                        <input type="email" name="email" placeholder="name@example.com"><br>
 
-                    <div class="password-container">
-                        <label>Inserisci la password</label>
-                        <input class="password" type="password" name="password" placeholder="Scrivila qui">
-                        <i class="fa-solid fa-eye"></i>
+                        <div class="password-container">
+                            <label>Inserisci la password</label>
+                            <input class="password" type="password" name="password" placeholder="Scrivila qui">
+                            <i class="fa-solid fa-eye"></i>
 
+                        </div>
+
+                        <button type="submit">ACCEDI</button>
+
+                        <p class="change-page">Non hai ancora un profilo? <span><a href="register.php">
+                                    Registrati</a></span></p>
                     </div>
 
-                    <button type="submit">ACCEDI</button>
-
-                    <p class="change-page">Non hai ancora un profilo? <span><a href="#"> Registrati</a></span></p>
                 </div>
 
-            </div>
-
-        </main>
+            </main>
 
 
-        <!--  </form> -->
+        </form>
     </div>
 
     <!-- BACKGROUND -->
